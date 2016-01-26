@@ -129,6 +129,16 @@ for (var i = 0; i < 5; i++) {
     }, 5);
   })(i);
 }
+
+// 以上等价于
+for (var i = 0; i < 5; i++) {
+  var foo = function (idx) {
+    setTimeout(function () {
+      console.log(idx);
+    }, 5);
+  };
+  foo(i);
+}
 ```
 
 ### this
